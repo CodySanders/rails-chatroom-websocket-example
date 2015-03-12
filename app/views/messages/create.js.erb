@@ -1,0 +1,6 @@
+$('#message').val('');
+
+<% publish_to '/messages/new' do %>
+  $('#messageBoard').append("<%= j render 'message' %>");
+<% end %>
+

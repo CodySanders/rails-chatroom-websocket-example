@@ -1,0 +1,10 @@
+development:
+  server: 'http://localhost:9292/faye/faye'
+  secret_token: 'secret'
+test:
+  server: 'http://localhost:9292/faye/faye'
+  secret_token: 'secret'
+production:
+  server: "https://fathomless-cliffs-8461.herokuapp.com/faye/faye"
+  secret_token: "7a750741710f4c149222cebcb1b39f68fe5abb0703dd9591b2c73752e2056b55"
+  signature_expiration: 86400 # one day

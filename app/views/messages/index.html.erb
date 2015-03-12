@@ -1,0 +1,50 @@
+<div class="header">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <h4 class="nav navbar-text">Logged in as, <%= @user %></h4>
+      <li id="logout" role="presentation" class="active">
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+      </li>
+    </ul>
+  </nav>
+  <h1 class="text-center text-muted center-title">Chatroom</h1>
+</div>
+<br/><br/>
+
+<div class="col-md-12">
+  <div class="panel panel-info ">
+    <div class="panel-heading">MESSAGES</div>
+    <div class="panel-body">
+      <ul id="messageBoard" class="media-list full-height-scrollable"></ul>
+    </div>
+    <div class="panel-footer bottom">
+      <form id="messageForm" action="/messages" accept-charset="UTF-8" data-remote="true" method="post">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="text" id="message" name="message" class="form-control" placeholder="Enter message"/>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add this back in after solution to track logged in users is developed -->
+<!--<div class="col-md-3">-->
+  <!--<div class="panel panel-info">-->
+    <!--<div class="panel-heading">-->
+      <!--ONLINE USERS-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+      <!--<ul id="userList" class="media-list full-height-scrollable">-->
+        <!--% @users.each do |user| %>-->
+          <!--<li id="%= user.id %>" class="media">-->
+            <!--<div class="media-body">-->
+              <!--<h4>%= user.username %></h4>-->
+            <!--</div>-->
+          <!--</li>-->
+        <!--%= end %>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<%= subscribe_to '/messages/new' %>
